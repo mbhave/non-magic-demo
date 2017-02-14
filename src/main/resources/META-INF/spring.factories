@@ -1,0 +1,4 @@
+config.EnableMagicAutoConfiguration=\
+config.TomcatConfiguration,\
+config.DispatcherServletConfiguration,\
+config.MvcConfiguration
