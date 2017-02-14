@@ -9,8 +9,7 @@ import org.springframework.context.annotation.Import;
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@Import({ TomcatConfiguration.class, DispatcherServletConfiguration.class,
-		MvcConfiguration.class })
+@Import(MagicAutoConfigurationImportSelector.class)
 public @interface EnableMagicAutoConfiguration {
 
 }
