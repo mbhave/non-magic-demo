@@ -1,6 +1,5 @@
 package config;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,12 +8,15 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnAClass(className = "org.apache.catalina.startup.Tomcat")
 public class TomcatConfiguration {
 
-	@Value("${port:8080}")
-	private int port;
+	private final ServerProperties properties;
+
+	public TomcatConfiguration(ServerProperties properties) {
+		this.properties = properties;
+	}
 
 	@Bean
 	TomcatServletWebServerFactory servletContainerFactory() {
-		return new TomcatServletWebServerFactory(this.port);
+		return new TomcatServletWebServerFactory(this.properties.getPort());
 	}
 
 }
