@@ -2,3 +2,4 @@ config.TomcatConfiguration
 config.UndertowConfiguration
 config.DispatcherServletConfiguration
 config.MvcConfiguration
+config.PropertyPlaceholderConfiguration
